@@ -120,7 +120,8 @@
 
         .description {
             padding: 0px;
-            margin: 0;
+            margin: 10px 0;
+            font-style: italic;
         }
 
         .title {
@@ -210,55 +211,16 @@
         }
 
         #hamburger {
-            width: 60px;
-            height: 5px;
+            width: 40px;
+            height: 40px;
+            background-image: url("./assets/hamb.png");
+            background-size: cover;
+            background-position: center;
             position: relative;
             cursor: pointer;
             outline: none;
-        }
-
-        #hamburger span {
-            display: block;
-            padding: 0;
-            margin: 0;
-            position: absolute;
-            height: 5px;
-            width: 100%;
-            background: #000;
-            border-radius: 9px;
-            opacity: 1;
-            left: 0;
-            transform: rotate(0deg);
-            transition: .5s ease-in-out;
-        }
-
-        #hamburger span:nth-child(1) {
-            top: 0px;
-            transform-origin: left center;
-        }
-
-        #hamburger span:nth-child(2) {
-            top: 21px;
-            transform-origin: left center;
-        }
-
-        #hamburger span:nth-child(3) {
-            top: 42px;
-            transform-origin: left center;
-        }
-
-        #hamburger.close span:nth-child(1) {
-            transform: rotate(45deg);
-        }
-
-        #hamburger.close span:nth-child(2) {
-            width: 0%;
-            opacity: 1;
-            transition: .1s;
-        }
-
-        #hamburger.close span:nth-child(3) {
-            transform: rotate(-45deg);
+            /* background-color: white; */
+            border-radius: 10px;
         }
 
         #nav-menu {
@@ -278,7 +240,7 @@
 
         .nav-list {
             position: fixed;
-            padding: 100px 20px;
+            padding: 100px 50px;
             list-style-type: none;
             font-size: 1.2em;
             background: #fff;
@@ -287,15 +249,28 @@
             margin-top: 0;
         }
 
-        .algo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bolder;
-            height: 50px;
-            background-color: transparent;
-            border-radius: 50%;
-            border: 2px solid #000;
+        .nav-link {
+
+            margin: 50px 0;
+        }
+
+        .nav-link a {
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1em;
+            color: #464646fd;
+        }
+
+        .btn{
+            background: tomato;
+            border-radius: 15px;
+            border:none;
+            border-bottom: 3px solid rgb(223, 86, 62);
+            padding: 10px 0;
+            font-size: 0.8em;
+            color: #f4f4f4;
+            font-weight: 600;
+            outline: none;
         }
     </style>
 
@@ -306,33 +281,20 @@
 
 <body>
 
-
-    <!-- ## Markup -->
-    <!--
-        The hamburger menu element contains three styled `span` elements inside a `div`.
-         The hamburger `div` uses the `tap` AMP action to trigger the `toggleClass()` event, 
-         which targets an element by its `id`. In this example, it targets `hamburger`.
-    
-        The `toggleClass()` event will add and remove any class it's given as an argument. 
-        This example passes `class='close'`. Additionally, it toggles an animation class for the navigation menu to slide out. 
-      -->
-
-
     <div class="hamburger_wrapper">
         <div id="hamburger" tabindex="1" role="button"
             on="tap:hamburger.toggleClass(class='close'), nav-menu.toggleClass(class='now-active')">
-            <div class="algo">
-                >
-            </div>
         </div>
     </div>
 
 
     <div id="nav-menu">
         <ul class="nav-list">
-            <li><a href="#">Sobre mi</a></li>
-            <li><a href="#">Video</a></li>
-            <li><a href="#">Redes</a></li>
+            <li class="nav-link"><a href="#">Quién soy?</a></li>
+            <li class="nav-link"><a href="#">Videos</a></li>
+            <li class="nav-link"><a href="#">Redes</a></li>
+            <li class="nav-link"><a href="#">Newsletter</a></li>
+            <li><button type="submit" class="btn">Suscribirse al Newsletter</button></li>
         </ul>
     </div>
     <div>
@@ -343,7 +305,7 @@
 
     <header class='header-container'>
         <div class="item">
-            <amp-img src="./assets/perfil2.jpg" alt="Foto de perfil" width="128" height="156" class="perfil-img">
+            <amp-img src="./assets/perfil2.jpg" alt="Foto de perfil" width="96" height="126" class="perfil-img">
             </amp-img>
         </div>
         <div class="item">
@@ -352,8 +314,7 @@
         <div class="item">
             <p class='description'>
                 Youtuber entuasiasta del diseño, amante de los gatos 🐈, influencer de instagram, en mi canal me dedico
-                a hacer videos acerca de outfits, vlogs, maquillaje, DIY, y mucho más! Sígueme en mis redes
-                para conocer más sobre mí!
+                a hacer videos acerca de outfits, vlogs, maquillaje, DIY, y mucho más!
             </p>
         </div>
     </header>
