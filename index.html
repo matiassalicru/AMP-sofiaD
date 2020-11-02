@@ -1,0 +1,265 @@
+<!doctype html>
+<html ⚡>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="description" content="This is the AMP Boilerplate.">
+    <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+
+    <!-- AMP Scripts -->
+    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"></script>
+    <script async custom-element="amp-social-share"
+        src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <!-- Font links -->
+
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <!-- Import other AMP Extensions here -->
+    <!-- Boilerplate AMP -->
+    <style amp-boilerplate>
+        body {
+            -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both
+        }
+
+        @-webkit-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-moz-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-ms-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @-o-keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+
+        @keyframes -amp-start {
+            from {
+                visibility: hidden
+            }
+
+            to {
+                visibility: visible
+            }
+        }
+    </style><noscript>
+        <style amp-boilerplate>
+            body {
+                -webkit-animation: none;
+                -moz-animation: none;
+                -ms-animation: none;
+                animation: none
+            }
+        </style>
+    </noscript>
+    <!-- Fin Boilerplate AMP -->
+
+    <style amp-custom>
+        /* Add your styles here */
+        body {
+            font-family: sans-serif, Helvetica;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .header-container {
+            display: grid;
+            grid-template-columns: minmax(18em, 50em);
+            grid-template-rows: repeat(3, auto);
+            grid-auto-flow: column;
+            gap: 5px;
+            height: 50%;
+            background-color: #d4d4d4;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            align-content: end;
+            padding: 20px;
+        }
+
+        .perfil-img {
+            border: 2px solid #ccc;
+            margin: 0;
+            border-radius: 50%;
+            padding: 0px;
+
+        }
+
+        .description {
+            padding: 0px;
+            margin: 0;
+        }
+
+        .title {
+            padding: 0px;
+            margin: 0;
+        }
+
+        .item {
+            /* border: 1px solid #ff7c7c; */
+        }
+
+        .section-container {
+            margin: 2em 0;
+            display: grid;
+            grid-template-columns: minmax(200px, 0.1fr) minmax(200px, 0.4fr) minmax(200px, 0.3fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas: " video video insta"
+                " video video insta"
+                " . . redes"
+            ;
+            justify-content: space-evenly;
+            align-items: start;
+            justify-items: stretch;
+            gap: 0;
+        }
+
+        .video {
+            grid-area: video;
+        }
+
+        .insta {
+            grid-area: insta;
+        }
+
+        .redes {
+            grid-area: redes;
+        }
+
+
+        .section-title {
+            font-weight: 300;
+            font-size: 1.4rem;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .carousel-img {
+            border-radius: 20px;
+        }
+
+        h2 {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .aside-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .section-container {
+                margin: 0;
+                padding: 0;
+                grid-template-columns: minmax(100px, 0.8fr) minmax(100px, 1fr);
+                gap: 20px;
+                grid-template-rows: repeat(3, 0.5fr);
+                grid-template-areas: " video video "
+                    "  insta insta "
+                    "  redes redes "
+
+                ;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    </style>
+
+
+    <link rel="canonical" href=".">
+    <title>Sofia Dolcemáscolo</title>
+</head>
+
+<body>
+
+    <header class='header-container'>
+        <div class="item">
+            <amp-img src="/perfil2.jpg" alt="Foto de perfil" width="128" height="156" class="perfil-img"></amp-img>
+        </div>
+        <div class="item">
+            <h1 class='title'>Sofía Dolcemáscolo</h1>
+        </div>
+        <div class="item">
+            <p class='description'>
+                Youtuber entuasiasta del diseño, amante de los gatos 🐈, influencer de instagram, en mi canal me dedico
+                a hacer videos acerca de outfits, vlogs, maquillaje, DIY, y mucho más! Sígueme en mis redes
+                para conocer más sobre mí!
+            </p>
+        </div>
+    </header>
+    <section class="section-container">
+
+        <article class="item video">
+            <h1 class='section-title'>Aquí puedes ver mi último video!</h1>
+            <amp-youtube data-videoid="dMqsgrE8nak" layout="responsive" width="460" height="250" class="video" />
+        </article>
+        <div class="item insta">
+            <h2>
+                ¡Spoiler de mi Instagram!
+            </h2>
+            <amp-carousel width="450" height="600" layout="responsive" type="slides" aria-label="Basic carousel">
+                <amp-img src="/insta3.jpg" width="460" height="350" class="carousel-img"></amp-img>
+                <amp-img src="/insta1.jpg" width="460" height="350" class="carousel-img"></amp-img>
+                <amp-img src="/insta2.jpg" width="460" height="350" class="carousel-img"></amp-img>
+            </amp-carousel>
+
+        </div>
+
+        <aside class='aside-container item redes'>
+            <h3>
+                Redes sociales
+            </h3>
+            <div>
+                <span>
+                    <amp-social-share type="twitter"></amp-social-share>
+                </span>
+                <span>
+                    <amp-social-share type="linkedin"></amp-social-share>
+                </span>
+                <span>
+                    <amp-social-share type="pinterest"></amp-social-share>
+                </span>
+            </div>
+        </aside>
+
+    </section>
+</body>
+
+</html>
