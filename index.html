@@ -102,7 +102,7 @@
             opacity: 1;
         }
 
-        a{
+        a {
             text-decoration: none;
             color: inherit;
         }
@@ -188,6 +188,7 @@
 
         .form {
             align-self: center;
+            text-align: center;
             grid-area: form;
         }
 
@@ -213,7 +214,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            font-weight: 300;
+            font-weight: 600;
             font-size: 1.2em;
             outline: none;
         }
@@ -267,10 +268,11 @@
         .sidebar {
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: space-around;
+            padding: 5em 0;
             align-items: center;
-            transform: translateX(-125vw);
-            width: 60vw;
+            transform: translateX(-100vw);
+            width: 70vw;
             height: 100vh;
             box-sizing: border-box;
         }
@@ -317,6 +319,7 @@
             height: 40px;
             width: 40px;
             border: none;
+            justify-self: end;
         }
 
         .sidebar-section {
@@ -324,6 +327,10 @@
             flex-direction: column;
             margin: 20px;
             border: none;
+        }
+
+        form {
+            margin: 20px 0;
         }
 
         fieldset {
@@ -366,6 +373,23 @@
             align-self: center;
             cursor: pointer;
             box-shadow: 2px 2px 10px #ff0000;
+        }
+
+        .footer {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px solid #c4c4c4;
+            background-color: #f3f3f3;
+            font-style: italic;
+            font-size: 0.8em;
+            margin-top: 5em;
+        }
+
+        .footer p span{
+            font-weight: 600;
+            color: violet;
         }
     </style>
 
@@ -429,11 +453,7 @@
                     </section>
                 </amp-accordion>
             </li>
-            <li><button type="submit" class="btn">
-                <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCFrgNngxcwbcyj9gXBixbWg">
-                    Suscribete a mi canal de youtube!
-                </a>
-            </button></li>
+
         </ul>
 
     </amp-sidebar>
@@ -479,6 +499,7 @@
 
         <form method="post" action-xhr="algo.com" target="_top" class="form">
             <fieldset>
+                <h3>Suscribete a mi newsletter semanal</h3>
                 <label>
                     <span>Tu nombre:</span>
                     <input type="text" name="name" placeholder="Matias..." required class="form-input">
@@ -519,6 +540,10 @@
         </aside>
 
     </section>
+
+    <footer class="footer">
+        <p>Website created by <span>Matias Salicrú</span> with AMP </p>
+    </footer>
 
 
 </body>
