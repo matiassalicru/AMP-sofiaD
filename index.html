@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <meta name="description" content="`Sofía Dolcemáscolo the best youtuber.">
     <link rel="preload" as="script" href="https://cdn.ampproject.org/v0.js">
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 
     <!-- AMP Scripts -->
     <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
@@ -13,6 +14,9 @@
     <script async custom-element="amp-social-share"
         src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
 
     <!-- Font links -->
 
@@ -98,6 +102,11 @@
             opacity: 1;
         }
 
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
         .header-container {
             display: grid;
             grid-template-columns: minmax(18em, 50em);
@@ -105,12 +114,14 @@
             grid-auto-flow: column;
             gap: 5px;
             height: 50%;
-            background-color: #d4d4d4;
+            background-color: #f1f1f1;
             justify-content: center;
             justify-items: center;
             align-items: center;
             align-content: end;
             padding: 20px;
+            box-shadow: 2px 2px 15px 5px #ff0000;
+
         }
 
         .perfil-img {
@@ -132,12 +143,6 @@
             margin: 0;
         }
 
-        .title-insta {
-            background-color: #c4c4c4;
-            padding: 20px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-
         .item {
             /* border: 1px solid #ff7c7c; */
         }
@@ -148,7 +153,7 @@
             grid-template-columns: minmax(200px, 0.1fr) minmax(200px, 0.4fr) minmax(200px, 0.3fr);
             grid-template-rows: repeat(3, 1fr);
             grid-template-areas: " video video insta"
-                " video video insta"
+                " form form insta"
                 " . . redes"
             ;
             justify-content: space-evenly;
@@ -162,11 +167,28 @@
         }
 
         .insta {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-content: center;
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 4px 4px 5px #ff0000;
+            background-color: #f1f1f1;
+            padding: 20px;
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             grid-area: insta;
         }
 
         .redes {
             grid-area: redes;
+        }
+
+        .form {
+            align-self: center;
+            grid-area: form;
         }
 
 
@@ -187,6 +209,15 @@
             text-align: center;
         }
 
+        h4 {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-weight: 300;
+            font-size: 1.2em;
+            outline: none;
+        }
+
         .aside-container {
             display: flex;
             flex-direction: column;
@@ -200,10 +231,11 @@
                 padding: 0;
                 grid-template-columns: minmax(100px, 0.8fr) minmax(100px, 1fr);
                 gap: 20px;
-                grid-template-rows: repeat(3, 0.5fr);
+                grid-template-rows: repeat(2, 0.5fr) 0.2fr 0.5fr;
                 grid-template-areas: " video video "
                     "  insta insta "
                     "  redes redes "
+                    " form form"
 
                 ;
                 justify-content: center;
@@ -232,59 +264,113 @@
             border-radius: 10px;
         }
 
-        .nav-menu {
+        .sidebar {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-evenly;
             align-items: center;
-            position: fixed;
-            transform: translateX(-100vw);
+            transform: translateX(-125vw);
             width: 60vw;
-            overflow: hidden;
-            /* background: #ff6161; */
+            height: 100vh;
+            box-sizing: border-box;
         }
 
 
         .nav-list {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            position: fixed;
+            justify-content: space-around;
+            align-items: center;
             list-style-type: none;
             font-size: 1.2em;
-            background: #fff;
-            width: 80%;
-            margin-top: 0;
+            width: 100%;
+            margin: 0;
+            padding: 0;
         }
 
-        .nav-link {
-
-            margin: 50px 0;
+        .section-item {
+            margin: 10px 0;
         }
 
-        .nav-link a {
+        .section-item a {
             font-weight: bold;
             text-decoration: none;
-            font-size: 1em;
+            font-size: 0.8em;
             color: #464646fd;
         }
 
         .btn {
-            background: tomato;
+            background: #ff0000;
             border-radius: 15px;
             border: none;
-            border-bottom: 3px solid rgb(223, 86, 62);
-            padding: 10px 0;
+            border-bottom: 3px solid #77281a;
+            box-shadow: 2px 2px 10px #ff0000;
+            padding: 10px;
             font-size: 0.8em;
             color: #f4f4f4;
             font-weight: 600;
             outline: none;
+            margin: 0 10px;
+        }
+
+        .sidebar-close {
+            height: 40px;
+            width: 40px;
+            border: none;
+        }
+
+        .sidebar-section {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+            border: none;
+        }
+
+        fieldset {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            box-sizing: border-box;
+            height: fit-content;
+            margin: 0 10px;
+            border-radius: 20px;
+            padding: 40px 0px;
+            box-shadow: 2px 2px 10px #ff0000;
+            border: 1px solid #c4c4c4;
+        }
+
+        input {
+            width: 80%;
+        }
+
+        label {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .form-input {
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #c3c3c3;
+        }
+
+        .input-submit {
+            height: 40px;
+            width: 60%;
+            border: transparent;
+            border-radius: 10px;
+            background: #ff0000;
+            color: #fff;
+            font-size: 1.2em;
+            align-self: center;
+            cursor: pointer;
+            box-shadow: 2px 2px 10px #ff0000;
         }
     </style>
 
 
-    <link rel="canonical" href=".">
+    <link rel="canonical" href="index.html">
     <title>Sofia Dolcemáscolo</title>
 </head>
 
@@ -295,25 +381,66 @@
         </div>
     </div>
 
-    <amp-sidebar id="sidebar" class='nav-menu' layout="nodisplay" side="left">
-        <h3>SideBar</h3>
-        <button on="tap:sidebar.close">Close the sidebar</button>
+    <amp-sidebar id="sidebar" class='sidebar' layout="nodisplay" side="left">
+        <button class='sidebar-close' on="tap:sidebar.close">
+            <amp-img src="./assets/close.png" width="320" height="320" layout="responsive" alt="close btn">
+            </amp-img>
+        </button>
         <ul class="nav-list">
-            <li class="nav-link"><a href="#">Quién soy?</a></li>
-            <li class="nav-link"><a href="#">Videos</a></li>
-            <li class="nav-link"><a href="#">Redes</a></li>
-            <li class="nav-link"><a href="#">Newsletter</a></li>
-            <li><button type="submit" class="btn">Suscribirse al Newsletter</button></li>
+            <li class="list-item">
+                <amp-accordion>
+                    <section class='sidebar-section'>
+                        <h4>Sobre mi</h4>
+                        <p class='section-item'>
+                            Mi nombre es Sofía soy una youtuber de 21 años, viviendo en la ciudad de Córdoba capital,
+                            apasionada por el mundo audiovisual con grandes metas por cumplir!
+                        </p>
+                    </section>
+                    <section class='sidebar-section'>
+                        <h4>Videos</h4>
+                        <ul class="nav-list">
+                            <li class="section-item">
+                                <a href="https://www.youtube.com/watch?v=fNYkf1kDrsw&t=2s">Oufits para otoño</a>
+                            </li>
+                            <li class="section-item">
+                                <a href="https://www.youtube.com/watch?v=dMqsgrE8nak&t=668s">Vlog de Halloween</a>
+                            </li>
+                            <li class="section-item">
+                                <a href="https://www.youtube.com/watch?v=bfIQRxqnFzA">Mi experiencias con piercings</a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class='sidebar-section'>
+                        <h4>Redes</h4>
+                        <ul class="nav-list">
+                            <li class="section-item">
+                                <a target="_blank" rel="noopener noreferrer"
+                                    href="https://www.youtube.com/channel/UCFrgNngxcwbcyj9gXBixbWg">Youtube</a>
+                            </li>
+                            <li class="section-item">
+                                <a target="_blank" rel="noopener noreferrer"
+                                    href="https://www.instagram.com/soof.98/">Instagram</a>
+                            </li>
+                            <li class="section-item">
+                                <a target="_blank" rel="noopener noreferrer"
+                                    href="https://twitter.com/cryunicorn98">Twitter</a>
+                            </li>
+                        </ul>
+                    </section>
+                </amp-accordion>
+            </li>
+            <li><button type="submit" class="btn">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCFrgNngxcwbcyj9gXBixbWg">
+                    Suscribete a mi canal de youtube!
+                </a>
+            </button></li>
         </ul>
+
     </amp-sidebar>
-
-
-
-
 
     <header class='header-container'>
         <div class="item">
-            <amp-img src="./assets/perfil2.jpg" alt="Foto de perfil" width="96" height="126" class="perfil-img">
+            <amp-img src="./assets/perfil.jpg" alt="Foto de perfil" width="96" height="126" class="perfil-img">
             </amp-img>
         </div>
         <div class="item">
@@ -331,23 +458,48 @@
         <article class="item video">
             <h1 class='section-title'>Aquí puedes ver mi último video!</h1>
             <amp-youtube data-videoid="dMqsgrE8nak" layout="responsive" width="460" height="250" class="video" />
+
+
         </article>
         <div class="item insta">
-            <div class="title-insta">
-                <h2>
-                    ¡Spoiler de mi Instagram!
-                </h2>
-                <p class="description">Aquí te muestro algunas de las fotos que te encontrarás en mi instagram, no
-                    olvides visitarlo en el siguient link</p>
-                <a href=""> Instagram </a>
-            </div>
+            <h2>
+                ¡Spoiler de mi Instagram!
+            </h2>
+            <p class="description">Aquí te muestro algunas de las fotos que te encontrarás en mi instagram, no
+                olvides visitarlo clickeando en el logo de instagram</p>
             <amp-carousel width="450" height="600" layout="responsive" type="slides" aria-label="Basic carousel">
                 <amp-img src="./assets/insta3.jpg" width="460" height="350" class="carousel-img"></amp-img>
                 <amp-img src="./assets/insta1.jpg" width="460" height="350" class="carousel-img"></amp-img>
                 <amp-img src="./assets/insta2.jpg" width="460" height="350" class="carousel-img"></amp-img>
             </amp-carousel>
-
+            <a href="https://www.instagram.com/soof.98/" target="_blank" rel="noopener noreferrer">
+                <amp-img src="./assets/Instagram.png" width="160" height="128"></amp-img>
+            </a>
         </div>
+
+        <form method="post" action-xhr="algo.com" target="_top" class="form">
+            <fieldset>
+                <label>
+                    <span>Tu nombre:</span>
+                    <input type="text" name="name" placeholder="Matias..." required class="form-input">
+                </label>
+                <label>
+                    <span>Un Email:</span>
+                    <input type="email" name="email" required placeholder="matias@gmail.com" class="form-input">
+                </label>
+                <input type="submit" class='input-submit' value="Subscribirse">
+            </fieldset>
+            <div submit-success>
+                <template type="amp-mustache">
+                    Subscription successful!
+                </template>
+            </div>
+            <div submit-error>
+                <template type="amp-mustache">
+                    Subscription failed!
+                </template>
+            </div>
+        </form>
 
         <aside class='aside-container item redes'>
             <h3>
@@ -367,6 +519,8 @@
         </aside>
 
     </section>
+
+
 </body>
 
 </html>
