@@ -15,6 +15,8 @@
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
+
 
     <!-- Font links -->
 
@@ -96,7 +98,7 @@
             font-family: sans-serif, Helvetica;
             margin: 0;
             padding: 0;
-            background-color: #c3f3f3;
+            background-color: #dcf5f5;
             color: #4d4d4d;
         }
 
@@ -135,12 +137,22 @@
             font-size: 1.5em;
         }
 
-        /* SECTION CONTAINER */
-        .section-container {
+        /* main CONTAINER */
+        .main-container {
             display: grid;
             justify-content: center;
-            grid-template-columns: 0.9fr;
+            box-sizing: border-box;
+            grid-template-columns: 1fr;
             grid-template-rows: 1fr;
+            grid-template-areas: "mis-fotos"
+                "video"
+                "social-title"
+                "social-list"
+                "exclusive-title"
+                "exclusive-photo"
+                "exclusive-video"
+                "cafecito"
+            ;
             /* grid-auto-flow: row; */
             /* margin: 2em 0; */
             /* justify-content: space-evenly; */
@@ -149,13 +161,60 @@
             /* gap: 0; */
         }
 
-        .section-title {
-            font-weight: 300;
-            font-size: 1.3rem;
+        .exclusive-title {
+            grid-area: exclusive-title;
+            font-size: 2rem;
+            text-align: center;
+            /* width: 100vw; */
+            padding: 2rem 0;
+            margin: 1em 0;
+            background: #c0d8d8;
+        }
+
+        .exclusive-photo {
+            grid-area: exclusive-photo;
+            display: flex;
+            flex-direction: column;
+            margin: 0 1em;
+        }
+
+        .exclusive-video {
+            grid-area: exclusive-video;
+            margin: 1.5em 1em 0 1em;
+
+        }
+
+        .cafecito {
+            grid-area: cafecito;
+            display: flex;
+            flex-direction: column;
+            padding: 2em;
             text-align: center;
         }
 
-        .section-title-instagram {
+        .video {
+            margin: 0 1em;
+            grid-area: video;
+        }
+
+        .mis-fotos {
+            margin: 0 1em;
+            grid-area: mis-fotos;
+        }
+
+        .main-title-video {
+            font-weight: 400;
+            font-size: 1.3rem;
+            text-align: center;
+            background: #c0d8d8;
+            /* background: #f3ffff; */
+            border-radius: 20px;
+            margin: 1em 0;
+            widows: 100vw;
+            padding: 1rem;
+        }
+
+        .main-title-instagram {
             font-size: 2rem;
             text-align: center;
             font-weight: 500;
@@ -166,6 +225,16 @@
             border-radius: 20px;
         }
 
+        .social-title {
+            grid-area: social-title;
+            /* background: #f3ffff; */
+            background: #c0d8d8;
+            font-size: 1.3rem;
+            text-align: center;
+            width: 100vw;
+            padding: 1em 0;
+            margin-top: 1em;
+        }
 
         .social-list {
             display: flex;
@@ -174,25 +243,13 @@
             align-items: center;
             padding: 0;
             justify-content: space-around;
+            grid-area: social-list;
         }
 
         .social-list li {
             width: 6em;
             height: 6em;
         }
-
-        .exclusive-content {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .exclusive-content h2 {
-            text-align: center;
-            font-size: 2em;
-            text-decoration: underline;
-            margin: 50px 0 20px 0;
-        }
-
 
         /* ASIDE CONTAINER */
         .aside-container {
@@ -275,7 +332,7 @@
         }
 
 
-        .section-sidebar-title {
+        .main-sidebar-title {
             background-color: transparent;
             border: none;
         }
@@ -297,7 +354,7 @@
             text-align: center;
         }
 
-        .form-title{
+        .form-title {
             font-size: 1em;
         }
 
@@ -343,31 +400,107 @@
             color: violet;
         }
 
-        /* @media screen and (max-width: 768px) {
-            .section-container {
+        .amp-instagram {
+            display: none;
+        }
+
+        .insta-desc {
+            display: none;
+        }
+
+
+        @media screen and (min-width: 768px) {
+            .main-container {
                 margin: 0;
                 padding: 0;
                 grid-template-columns: minmax(100px, 0.8fr) minmax(100px, 1fr);
                 gap: 20px;
-                grid-template-rows: repeat(2, 0.5fr) 0.2fr 0.5fr;
-                grid-template-areas: " video video "
-                    "  insta insta "
-                    "  redes redes "
-                    " form form"
+                grid-template-rows: repeat(6, auto);
+                grid-template-areas: " insta            insta-desc "
+                    " exclusive-title  exclusive-title "
+                    " exclusive-photo  exclusive-video "
+                    " cafecito         cafecito "
+                    " social-title     social-title "
+                    " social-list      social-list "
 
                 ;
                 justify-content: center;
                 align-items: center;
             }
 
-            .insta {
+            .mis-fotos {
+                display: none;
+            }
+
+            .amp-instagram {
+                grid-area: insta;
+                display: block;
+                margin: 0 2em;
+            }
+
+            .insta-desc {
+                grid-area: insta-desc;
+                display: flex;
+                margin: auto;
+                font-size: 2rem;
+                width: 50%;
+                text-align: center;
+            }
+
+            .exclusive-photo {
+                grid-area: exclusive-photo;
+                padding: 0;
+            }
+
+            .exclusive-video {
+                display: block;
+                grid-area: exclusive-video;
+            }
+
+            .cafecito {
+                grid-area: cafecito;
+                font-size: 2em;
+                width: 50%;
+                margin: auto;
+            }
+
+            .social-title {
+                grid-area: social-title;
+                font-size: 2em;
+            }
+
+            .social-list {
+                grid-area: social-list;
+            }
+
+            .social-list li {
+                width: 10em;
+            }
+
+            .video {
+                display: none;
             }
 
             .sidebar {
-                width: 70vw;
+                width: 40vw;
+                height: 100%;
+                box-sizing: border-box;
             }
 
-        } */
+            .nav-list {
+                font-size: 1.1em;
+                width: 60%;
+                margin: auto;
+                padding-left: 0;
+                padding-bottom: 0em;
+                border-bottom: 2px solid #444444;
+            }
+
+            .main-sidebar-title {
+                color: #444;
+            }
+
+        }
     </style>
 
 
@@ -390,9 +523,9 @@
         <ul class="nav-list">
             <li class="list-item">
                 <amp-accordion>
-                    <section class='sidebar-section'>
-                        <h4 class="section-sidebar-title">Sobre mi</h4>
-                        <p class='section-item'>
+                    <section class='sidebar-main'>
+                        <h4 class="main-sidebar-title">Sobre mi</h4>
+                        <p class='main-item'>
                             Mi nombre es Sofía soy una youtuber de 21 años, viviendo en la ciudad de Córdoba capital,
                             apasionada por el mundo audiovisual con grandes metas por cumplir!
                         </p>
@@ -452,7 +585,8 @@
 
     <header class='header-container'>
         <div class="item">
-            <amp-img src="./assets/perfil3.png" width="92" height="168" layout="responsive" alt="Foto de perfil" class="perfil-img">
+            <amp-img src="./assets/perfil3.png" width="92" height="168" layout="responsive" alt="Foto de perfil"
+                class="perfil-img">
             </amp-img>
         </div>
         <div class="item">
@@ -466,59 +600,32 @@
         </div>
     </header>
 
-    <section class="section-container">
+    <main class="main-container">
 
-        <article class="item">
-            <h1 class='section-title-instagram'>MIRA MIS FOTOS!</h1>
+        <article class="item mis-fotos">
+            <h1 class='main-title-instagram'>MIRA MIS FOTOS!</h1>
             <amp-carousel width="450" height="600" layout="responsive" type="slides" aria-label="Basic carousel">
                 <amp-img src="./assets/insta/insta1.jpg" width="600" height="450" class="carousel-img"></amp-img>
                 <amp-img src="./assets/insta/insta2.jpg" width="600" height="450" class="carousel-img"></amp-img>
             </amp-carousel>
+
         </article>
 
-
-        <article class="item insta">
-            <h1 class="section-title">
-                SUSCRIBETE A MI CANAL PARA VER MIS ULTIMOS VIDEOS!
-            </h1>
-
-            <amp-youtube data-videoid="dMqsgrE8nak" layout="responsive" width="360" height="250" class="video" />
+        <article class="amp-instagram">
+            <amp-instagram data-shortcode="CGA1qCCHdIj" width="1" height="1" layout="responsive">
+            </amp-instagram>
         </article>
 
-        <aside class='aside-container item'>
-            <h3>
-                Redes sociales
-            </h3>
-            <ul class="social-list">
-                <li>
-                    <a href="https://twitter.com/CryUnicorn98">
-                        <amp-img src="./assets/social/tiktok.png" width="200" height="200" layout="responsive"
-                            alt="go to twitter">
-                        </amp-img>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/CryUnicorn98">
-                        <amp-img src="./assets/social/snapchat.png" width="200" height="200" layout="responsive"
-                            alt="go to snapchat">
-                        </amp-img>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/CryUnicorn98">
-                        <amp-img src="./assets/social/twitter.png" width="200" height="200" layout="responsive"
-                            alt="go to twitter">
-                        </amp-img>
-                    </a>
-                </li>
-            </ul>
-        </aside>
+        <article class="insta-desc">
+            <p>
+                Aqui puedes entrar directamente a mi instagram donde podrás saber un poco mas sobre mi!
+            </p>
+        </article>
 
-        <article class="exclusive-content">
-            <h2>Contenido Exclusivo</h2>
+        <h1 class="exclusive-title">Contenido Exclusivo</h1>
 
+        <article class="exclusive-photo">
             <amp-carousel width="450" height="600" layout="responsive" type="slides" aria-label="Basic carousel">
-
                 <amp-img layout="responsive" src="./assets/exclusive/pic4.jpg" width="600" height="450"
                     class="carousel-img"></amp-img>
                 <amp-img layout="responsive" src="./assets/exclusive/pic5.jpg" width="600" height="450"
@@ -528,8 +635,59 @@
             </amp-carousel>
         </article>
 
-        
-    </section>
+        <article class='exclusive-video'>
+            <amp-youtube width="480" height="270" layout="responsive" data-videoid="lBTCB7yLs8Y">
+            </amp-youtube>
+        </article>
+
+        <article class="cafecito">
+            <p>
+                Si quieres aparecer en un video o que te envíe un saludo siempre puedes ayudarme donándome unos
+                cafecitos
+            </p>
+            <a href='https://cafecito.app/soof' rel='noopener' target='_blank'><img
+                    srcset='https://cdn.cafecito.app/imgs/buttons/button_4.png 1x, https://cdn.cafecito.app/imgs/buttons/button_4_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_4_3.75x.png 3.75x'
+                    src='https://cdn.cafecito.app/imgs/buttons/button_4.png'
+                    alt='Invitame un café en cafecito.app' /></a>
+        </article>
+
+
+        <h1 class="social-title">REDES SOCIALES</h1>
+
+        <article class="item video">
+            <h1 class="main-title-video">
+                SUSCRIBETE A MI CANAL PARA VER MIS ULTIMOS VIDEOS!
+            </h1>
+
+            <amp-youtube data-videoid="dMqsgrE8nak" layout="responsive" width="360" height="250" class="video" />
+        </article>
+
+        <ul class="social-list">
+            <li>
+                <a href="https://twitter.com/CryUnicorn98">
+                    <amp-img src="./assets/social/tiktok.png" width="200" height="200" layout="responsive"
+                        alt="go to twitter">
+                    </amp-img>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/CryUnicorn98">
+                    <amp-img src="./assets/social/snapchat.png" width="200" height="200" layout="responsive"
+                        alt="go to snapchat">
+                    </amp-img>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/CryUnicorn98">
+                    <amp-img src="./assets/social/twitter.png" width="200" height="200" layout="responsive"
+                        alt="go to twitter">
+                    </amp-img>
+                </a>
+            </li>
+        </ul>
+
+
+    </main>
 
     <footer class="footer">
         <p>Website created by <span>Matias Salicrú</span> with AMP </p>
