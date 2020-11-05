@@ -97,7 +97,7 @@
             margin: 0;
             padding: 0;
             background-color: #c3f3f3;
-            color: #757575;
+            color: #4d4d4d;
         }
 
         /* HEADER */
@@ -203,7 +203,7 @@
         }
 
 
-
+        /* HAMBURGUER MENU */
         .hamburger_wrapper {
             padding: 15px;
             z-index: 10;
@@ -224,58 +224,56 @@
             border-radius: 10px;
         }
 
+        /* SIDEBAR */
+
         .sidebar {
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: start;
             padding: 5em 0;
             align-items: center;
             transform: translateX(-100vw);
-            width: 35vw;
-            height: 100vh;
+            width: 60vw;
+            border-radius: 0 20px 20px 0;
+            height: 90vh;
             box-sizing: border-box;
             background: inherit;
-            color: #f4f4f4;
         }
 
 
         .nav-list {
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
+            justify-content: start;
+            align-items: flex-start;
             list-style-type: none;
-            font-size: 1.2em;
-            width: 100%;
-            margin: 0;
-            padding: 0;
+            font-size: 1.1em;
+            width: 60%;
+            margin: auto;
+            padding-left: 0;
+            padding-bottom: 1em;
+            border-bottom: 2px solid #444444;
         }
 
-        .section-item {
-            margin: 10px 0;
+        .nav-list li {
+            margin: 0.5em 0;
         }
 
-        .section-item a {
-            font-weight: bold;
+        .nav-list li a {
+            color: inherit;
             text-decoration: none;
-            font-size: 0.8em;
         }
 
 
         .sidebar-close {
             height: 40px;
             width: 40px;
+            margin: 0 0 2em 2em;
             border: none;
-            justify-self: end;
+            align-self: flex-start;
             background-color: transparent;
         }
 
-        .sidebar-section {
-            display: flex;
-            flex-direction: column;
-            margin: 20px;
-            border: none;
-        }
 
         .section-sidebar-title {
             background-color: transparent;
@@ -291,14 +289,16 @@
         fieldset {
             display: flex;
             flex-direction: column;
-            align-items: stretch;
             box-sizing: border-box;
             height: fit-content;
             margin: 0 10px;
             border-radius: 20px;
-            padding: 40px 0px;
-            /* box-shadow: 2px 2px 10px #ff0000; */
             border: none;
+            text-align: center;
+        }
+
+        .form-title{
+            font-size: 1em;
         }
 
         input {
@@ -306,28 +306,24 @@
         }
 
         label {
-            text-align: center;
+            text-align: start;
             margin: 10px 0;
         }
 
         .form-input {
+            margin-top: 5px;
             padding: 10px 20px;
-            margin: 10px;
             border-radius: 5px;
             border: 1px solid #c3c3c3;
         }
 
         .input-submit {
-            height: 40px;
-            width: 60%;
             border: transparent;
             border-radius: 10px;
-            background: #ff0000;
-            color: #fff;
-            font-size: 1.2em;
+            font-size: 1em;
+            padding: 12px;
             align-self: center;
             cursor: pointer;
-            /* box-shadow: 2px 2px 10px #ff0000; */
         }
 
         /* FOOTER */
@@ -401,41 +397,56 @@
                             apasionada por el mundo audiovisual con grandes metas por cumplir!
                         </p>
                     </section>
-                    <section class='sidebar-section'>
-                        <h4 class="section-sidebar-title">Videos</h4>
-                        <ul class="nav-list">
-                            <li class="section-item">
-                                <a href="https://www.youtube.com/watch?v=fNYkf1kDrsw&t=2s">Oufits para otoño</a>
-                            </li>
-                            <li class="section-item">
-                                <a href="https://www.youtube.com/watch?v=dMqsgrE8nak&t=668s">Vlog de Halloween</a>
-                            </li>
-                            <li class="section-item">
-                                <a href="https://www.youtube.com/watch?v=bfIQRxqnFzA">Mi experiencias con piercings</a>
-                            </li>
-                        </ul>
-                    </section>
-                    <section class='sidebar-section'>
-                        <h4 class="section-sidebar-title">Redes</h4>
-                        <ul class="nav-list">
-                            <li class="section-item">
-                                <a target="_blank" rel="noopener noreferrer"
-                                    href="https://www.youtube.com/channel/UCFrgNngxcwbcyj9gXBixbWg">Youtube</a>
-                            </li>
-                            <li class="section-item">
-                                <a target="_blank" rel="noopener noreferrer"
-                                    href="https://www.instagram.com/soof.98/">Instagram</a>
-                            </li>
-                            <li class="section-item">
-                                <a target="_blank" rel="noopener noreferrer"
-                                    href="https://twitter.com/cryunicorn98">Twitter</a>
-                            </li>
-                        </ul>
-                    </section>
                 </amp-accordion>
             </li>
 
+            <li class="list-item">
+                <a href="https://www.instagram.com/soof.98/" rel='noopener noreferrer' target='_blank'>
+                    INSTAGRAM
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="https://www.youtube.com/channel/UCFrgNngxcwbcyj9gXBixbWg" rel='noopener noreferrer'
+                    target='_blank'>
+                    YOUTUBE
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="https://twitter.com/cryunicorn98" rel='noopener noreferrer' target='_blank'>
+                    TWITTER
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="#" rel='noopener noreferrer' target='_blank'>
+                    TIKTOK
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="#" rel='noopener noreferrer' target='_blank'>
+                    SNAPCHAT
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="https://cafecito.app/soof" rel='noopener noreferrer' target='_blank'>
+                    CAFECITO
+                </a>
+            </li>
         </ul>
+
+        <form method="post" action-xhr="example.com" target="_top" class="form">
+            <fieldset>
+                <h3 class="form-title">Suscribete para obtener contenido exclusivo</h3>
+                <label>
+                    <span>Tu nombre:</span>
+                    <input type="text" name="name" placeholder="Matias..." required class="form-input">
+                </label>
+                <label>
+                    <span>Un Email:</span>
+                    <input type="email" name="email" required placeholder="matias@gmail.com" class="form-input">
+                </label>
+                <input type="submit" class='input-submit' value="Subscribirse">
+            </fieldset>
+        </form>
 
     </amp-sidebar>
 
@@ -517,20 +528,7 @@
             </amp-carousel>
         </article>
 
-        <!-- <form method="post" action-xhr="example.com" target="_top" class="form">
-                    <fieldset>
-                        <h3>Suscribete a mi newsletter semanal</h3>
-                        <label>
-                            <span>Tu nombre:</span>
-                            <input type="text" name="name" placeholder="Matias..." required class="form-input">
-                        </label>
-                        <label>
-                            <span>Un Email:</span>
-                            <input type="email" name="email" required placeholder="matias@gmail.com" class="form-input">
-                        </label>
-                        <input type="submit" class='input-submit' value="Subscribirse">
-                    </fieldset>
-                </form> -->
+        
     </section>
 
     <footer class="footer">
