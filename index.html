@@ -188,6 +188,19 @@
             height: 6em;
         }
 
+        .exclusive-content{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .exclusive-content h2 {
+            text-align: center;
+            font-size: 2em;
+            text-decoration: underline;
+            margin: 50px 0 20px 0 ;
+        }
+
+
         /* ASIDE CONTAINER */
         .aside-container {
             display: flex;
@@ -454,8 +467,8 @@
         <article class="item">
             <h1 class='section-title-instagram'>MIRA MIS FOTOS!</h1>
             <amp-carousel width="450" height="600" layout="responsive" type="slides" aria-label="Basic carousel">
-                <amp-img src="./assets/insta1.jpg" width="460" height="350" class="carousel-img"></amp-img>
-                <amp-img src="./assets/insta2.jpg" width="460" height="350" class="carousel-img"></amp-img>
+                <amp-img src="./assets/insta/insta1.jpg" width="600" height="450" class="carousel-img"></amp-img>
+                <amp-img src="./assets/insta/insta2.jpg" width="600" height="450" class="carousel-img"></amp-img>
             </amp-carousel>
         </article>
 
@@ -494,11 +507,18 @@
                         </amp-img>
                     </a>
                 </li>
-
-
-
                 </div>
         </aside>
+
+        <article class="exclusive-content">
+            <h2>Contenido Exclusivo</h2>
+            <amp-carousel width="450" height="600" layout="responsive" type="slides" aria-label="Basic carousel">
+                <amp-img src="./assets/exclusive/pic1.jpg" width="600" height="450" class="carousel-img"></amp-img>
+                <amp-img src="./assets/exclusive/pic2.jpg" width="600" height="450" class="carousel-img"></amp-img>
+                <amp-img src="./assets/exclusive/pic3.jpg" width="600" height="450" class="carousel-img"></amp-img>
+
+            </amp-carousel>
+        </article>
 
         <!-- <form method="post" action-xhr="example.com" target="_top" class="form">
                     <fieldset>
