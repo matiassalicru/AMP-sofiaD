@@ -98,9 +98,8 @@
             font-family: sans-serif, Helvetica;
             margin: 0;
             padding: 0;
-            background-color: #303030;
-            color: #f4f4f4;
-            opacity: 1;
+            background-color: #c3f3f3;
+            color: #757575;
         }
 
         a {
@@ -108,11 +107,11 @@
             color: inherit;
         }
 
+        /* HEADER */
         .header-container {
             display: grid;
             grid-template-columns: minmax(18em, 50em);
             grid-template-rows: repeat(3, auto);
-            grid-auto-flow: column;
             gap: 5px;
             height: 50%;
             justify-content: center;
@@ -120,103 +119,76 @@
             align-items: center;
             align-content: end;
             padding: 20px;
-            box-shadow: 2px 2px 15px 5px #ff0000;
-
         }
 
         .perfil-img {
             border: 2px solid #ccc;
-            margin: 0;
+            width: 120px;
+            max-height: 120px;
             border-radius: 50%;
-            padding: 0px;
-
+            box-sizing: border-box;
         }
 
         .description {
             padding: 0px 10px;
             margin: 10px 0;
-            font-style: italic;
+            text-align: center;
         }
 
         .title {
             padding: 0px;
-            margin: 0;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1.5em;
         }
 
+        /* SECTION CONTAINER */
         .section-container {
-            margin: 2em 0;
             display: grid;
-            grid-template-columns: minmax(200px, 0.1fr) minmax(200px, 0.4fr) minmax(200px, 0.3fr);
-            grid-template-rows: repeat(3, 1fr);
-            grid-template-areas: " video video insta"
-                " form form insta"
-                " . . redes"
-            ;
-            justify-content: space-evenly;
-            align-items: start;
-            justify-items: stretch;
-            gap: 0;
+            justify-content: center;
+            grid-template-columns: 0.9fr;
+            grid-template-rows: 1fr;
+            /* grid-auto-flow: row; */
+            /* margin: 2em 0; */
+            /* justify-content: space-evenly; */
+            /* align-items: start; */
+            /* justify-items: stretch; */
+            /* gap: 0; */
         }
-
-        .video {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            grid-area: video;
-        }
-
-        .insta {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-content: center;
-            text-align: center;
-            box-sizing: border-box;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px #ff0000;
-            padding: 20px;
-            height: 100%;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            grid-area: insta;
-        }
-
-        .redes {
-            grid-area: redes;
-        }
-
-        .form {
-            align-self: center;
-            text-align: center;
-            grid-area: form;
-        }
-
 
         .section-title {
             font-weight: 300;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             text-align: center;
-            font-style: italic;
+        }
+
+        .section-title-instagram {
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 500;
+            margin-bottom: -30px;
         }
 
         .carousel-img {
             border-radius: 20px;
         }
 
-        h2 {
-            margin: 0;
+
+        .social-list {
+            display: flex;
+            list-style-type: none;
+            width: 100%;
+            align-items: center;
             padding: 0;
-            text-align: center;
+            justify-content: space-around;
         }
 
-        h4 {
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.2em;
-            outline: none;
+        .social-list li {
+            width: 6em;
+            height: 6em;
         }
 
+        /* ASIDE CONTAINER */
         .aside-container {
             display: flex;
             flex-direction: column;
@@ -283,26 +255,6 @@
             font-size: 0.8em;
         }
 
-        .btn {
-            background: #ff0000;
-            border-radius: 15px;
-            border: none;
-            border-bottom: 3px solid #77281a;
-            box-shadow: 2px 2px 10px #ff0000;
-            padding: 10px;
-            font-size: 1em;
-            color: #f4f4f4;
-            font-weight: 300;
-            outline: none;
-            width: 80%;
-            margin: 50px auto 0 auto;
-            cursor: pointer;
-            transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-        }
-
-        .btn:hover {
-            box-shadow: 0px 0px 0px #ff0000;
-        }
 
         .sidebar-close {
             height: 40px;
@@ -319,6 +271,13 @@
             border: none;
         }
 
+        .section-sidebar-title {
+            background-color: transparent;
+            border: none;
+        }
+
+        /* FORM */
+
         form {
             margin: 20px 0;
         }
@@ -332,7 +291,7 @@
             margin: 0 10px;
             border-radius: 20px;
             padding: 40px 0px;
-            box-shadow: 2px 2px 10px #ff0000;
+            /* box-shadow: 2px 2px 10px #ff0000; */
             border: none;
         }
 
@@ -362,14 +321,10 @@
             font-size: 1.2em;
             align-self: center;
             cursor: pointer;
-            box-shadow: 2px 2px 10px #ff0000;
+            /* box-shadow: 2px 2px 10px #ff0000; */
         }
 
-        .section-sidebar-title {
-            background-color: transparent;
-            border: none;
-        }
-
+        /* FOOTER */
         .footer {
             width: 100%;
             display: flex;
@@ -386,7 +341,7 @@
             color: violet;
         }
 
-        @media screen and (max-width: 768px) {
+        /* @media screen and (max-width: 768px) {
             .section-container {
                 margin: 0;
                 padding: 0;
@@ -404,14 +359,13 @@
             }
 
             .insta {
-                box-shadow: 4px 4px 5px #ff0000;
             }
 
-            .sidebar{
+            .sidebar {
                 width: 70vw;
             }
 
-        }
+        } */
     </style>
 
 
@@ -428,7 +382,7 @@
 
     <amp-sidebar id="sidebar" class='sidebar' layout="nodisplay" side="left">
         <button class='sidebar-close' on="tap:sidebar.close">
-            <amp-img src="./assets/close.png" width="320" height="320" layout="responsive" alt="close btn">
+            <amp-img src="./assets/close.png" width="640" height="640" layout="responsive" alt="close btn">
             </amp-img>
         </button>
         <ul class="nav-list">
@@ -481,7 +435,7 @@
 
     <header class='header-container'>
         <div class="item">
-            <amp-img src="./assets/perfil2.jpg" alt="Foto de perfil" width="96" height="126" class="perfil-img">
+            <amp-img src="" width="92" height="168" layout="responsive" alt="Foto de perfil" class="perfil-img">
             </amp-img>
         </div>
         <div class="item">
@@ -494,69 +448,72 @@
             </p>
         </div>
     </header>
+
     <section class="section-container">
 
-        <article class="item video">
-            <div>
-                <h1 class='section-title'>Aquí puedes ver mi último video!</h1>
-                <amp-youtube data-videoid="dMqsgrE8nak" layout="responsive" width="460" height="250" class="video" />
-            </div>
-
-            <button class="btn">
-                <a href="https://www.youtube.com/channel/UCFrgNngxcwbcyj9gXBixbWg" target="_blank"
-                    rel="noopener noreferrer">
-                    Suscribete a mi canal de Youtube
-                </a>
-            </button>
-
-        </article>
-        <div class="item insta">
-            <h2>
-                ¡Spoiler de mi Instagram!
-            </h2>
-            <p class="description">Aquí te muestro algunas de las fotos que te encontrarás en mi instagram, no
-                olvides visitarlo clickeando en el logo de instagram</p>
+        <article class="item">
+            <h1 class='section-title-instagram'>MIRA MIS FOTOS!</h1>
             <amp-carousel width="450" height="600" layout="responsive" type="slides" aria-label="Basic carousel">
-                <amp-img src="./assets/insta3.jpg" width="460" height="350" class="carousel-img"></amp-img>
                 <amp-img src="./assets/insta1.jpg" width="460" height="350" class="carousel-img"></amp-img>
                 <amp-img src="./assets/insta2.jpg" width="460" height="350" class="carousel-img"></amp-img>
             </amp-carousel>
-            <a href="https://www.instagram.com/soof.98/" target="_blank" rel="noopener noreferrer">
-                <amp-img src="./assets/Instagram.png" width="160" height="128"></amp-img>
-            </a>
-        </div>
+        </article>
 
-        <form method="post" action-xhr="example.com" target="_top" class="form">
-            <fieldset>
-                <h3>Suscribete a mi newsletter semanal</h3>
-                <label>
-                    <span>Tu nombre:</span>
-                    <input type="text" name="name" placeholder="Matias..." required class="form-input">
-                </label>
-                <label>
-                    <span>Un Email:</span>
-                    <input type="email" name="email" required placeholder="matias@gmail.com" class="form-input">
-                </label>
-                <input type="submit" class='input-submit' value="Subscribirse">
-            </fieldset>
-        </form>
 
-        <aside class='aside-container item redes'>
+        <article class="item insta">
+            <h1 class="section-title">
+                SUSCRIBETE A MI CANAL PARA VER MIS ULTIMOS VIDEOS!
+            </h1>
+
+            <amp-youtube data-videoid="dMqsgrE8nak" layout="responsive" width="360" height="250" class="video" />
+        </article>
+
+        <aside class='aside-container item'>
             <h3>
                 Redes sociales
             </h3>
-            <div>
-                <span>
-                    <amp-social-share type="twitter"></amp-social-share>
-                </span>
-                <span>
-                    <amp-social-share type="linkedin"></amp-social-share>
-                </span>
-                <span>
-                    <amp-social-share type="pinterest"></amp-social-share>
-                </span>
-            </div>
+            <ul class="social-list">
+                <li>
+                    <a href="">
+                        <amp-img src="/assets/social/tiktok.png" width="1" height="1" layout="responsive"
+                            alt="go to twitter">
+                        </amp-img>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <amp-img src="/assets/social/snapchat.png" width="1" height="1" layout="responsive"
+                            alt="go to snapchat">
+                        </amp-img>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/CryUnicorn98">
+                        <amp-img src="/assets/social/twitter.png" width="1" height="1" layout="responsive"
+                            alt="go to twitter">
+                        </amp-img>
+                    </a>
+                </li>
+
+
+
+                </div>
         </aside>
+
+        <!-- <form method="post" action-xhr="example.com" target="_top" class="form">
+                    <fieldset>
+                        <h3>Suscribete a mi newsletter semanal</h3>
+                        <label>
+                            <span>Tu nombre:</span>
+                            <input type="text" name="name" placeholder="Matias..." required class="form-input">
+                        </label>
+                        <label>
+                            <span>Un Email:</span>
+                            <input type="email" name="email" required placeholder="matias@gmail.com" class="form-input">
+                        </label>
+                        <input type="submit" class='input-submit' value="Subscribirse">
+                    </fieldset>
+                </form> -->
     </section>
 
     <footer class="footer">
