@@ -16,7 +16,7 @@
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
     <script async custom-element="amp-instagram" src="https://cdn.ampproject.org/v0/amp-instagram-0.1.js"></script>
-
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
 
     <!-- Font links -->
 
@@ -374,6 +374,48 @@
             cursor: pointer;
         }
 
+        .lightbox {
+            background: #c0d8d8;
+            width: 80%;
+            height: 40%;
+            position: absolute;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            border-radius: 2em;
+            color: #4d4d4d;
+            justify-content: center;
+        }
+
+
+
+        .in-lightbox {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-self: center;
+            padding: 20px;
+        }
+
+        .lightbox h1 {
+            text-align: center;
+            font-size: 1.2em;
+            color: #4d4d4d;
+        }
+
+        .in-lightbox p {
+            width: 70%;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .lightbox-close-btn {
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 1px solid #c0d8d8;
+            font-size: 1em;
+        }
+
         /* FOOTER */
         .footer {
             width: 100%;
@@ -400,7 +442,25 @@
         }
 
 
+
         @media screen and (min-width: 768px) {
+
+            .perfil-img {
+                border: 2px solid #ccc;
+                width: 200px;
+                max-height: 200px;
+                border-radius: 50%;
+                box-sizing: border-box;
+            }
+
+            .title{
+                font-size: 2em;
+            }
+
+            .description{
+                font-size: 1.3em;
+            }
+
             .main-container {
                 margin: 0;
                 padding: 0;
@@ -487,6 +547,12 @@
                 border-bottom: 2px solid #444444;
             }
 
+            .lightbox {
+                width: 50%;
+                height: 30%;
+            }
+
+
         }
     </style>
 
@@ -498,11 +564,11 @@
 <body>
 
     <div class="hamburger_wrapper">
-        <div id="hamburger" tabindex="1" role="button" on="tap:sidebar.toggle">
+        <div id="hamburger" tabindex="1" role="button" on="tap:sidebar.open">
         </div>
     </div>
 
-<!-- SIDEBAR -->
+    <!-- SIDEBAR -->
     <amp-sidebar id="sidebar" class='sidebar' layout="nodisplay" side="left">
         <button class='sidebar-close' on="tap:sidebar.close">
             <amp-img src="./assets/close.png" width="640" height="640" layout="responsive" alt="close btn">
@@ -511,7 +577,7 @@
         <ul class="nav-list">
             <li class="list-item">
                 <amp-accordion>
-                    <section class='sidebar-main'>
+                    <section class='sidebar-main' on="collapse:sidebar.close">
                         <h4 class="main-sidebar-title">Sobre mi</h4>
                         <p class='main-item'>
                             Mi nombre es Sofía soy una youtuber de 21 años, viviendo en la ciudad de Córdoba capital,
@@ -565,12 +631,27 @@
                     <span>Un Email:</span>
                     <input type="email" name="email" required placeholder="matias@gmail.com" class="form-input">
                 </label>
-                <input type="submit" class='input-submit' value="Subscribirse">
+                <input type='button' on="tap:my-lightbox,sidebar.close" role='checkbox' tabindex="0"
+                    class='input-submit' value="Suscribe (en prueba)" on="tap:my-lightbox.open">
             </fieldset>
         </form>
 
     </amp-sidebar>
 
+    <div>
+        <amp-lightbox id="my-lightbox" layout="nodisplay" class="lightbox">
+            <div class='in-lightbox' tabindex="0">
+                <h1>Gracias por suscribirte!</h1>
+                <p>
+                    De igual manera todavía no se ha enviado ningún mail, te avisaremos cuando esté habilitada esta
+                    opción.
+                </p>
+                <button class='lightbox-close-btn' on="tap:my-lightbox.close">
+                    Cerrar este mensaje.
+                </button>
+            </div>
+        </amp-lightbox>
+    </div>
     <!-- HEADER -->
 
     <header class='header-container'>
@@ -637,10 +718,11 @@
                 Si quieres aparecer en un video o que te envíe un saludo siempre puedes ayudarme donándome unos
                 cafecitos
             </p>
-            <a href='https://cafecito.app/soof' rel='noopener' target='_blank'><img
+            <a href='https://cafecito.app/soof' rel='noopener' target='_blank'>
+                <amp-img width="192" height="40"
                     srcset='https://cdn.cafecito.app/imgs/buttons/button_4.png 1x, https://cdn.cafecito.app/imgs/buttons/button_4_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_4_3.75x.png 3.75x'
-                    src='https://cdn.cafecito.app/imgs/buttons/button_4.png'
-                    alt='Invitame un café en cafecito.app' /></a>
+                    src='https://cdn.cafecito.app/imgs/buttons/button_4.png' alt='Invitame un café en cafecito.app' />
+            </a>
         </article>
 
 
